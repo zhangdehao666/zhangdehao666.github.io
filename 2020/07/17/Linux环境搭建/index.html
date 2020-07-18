@@ -6,15 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Deag Zohn Hag</title>
+  <title>Linux环境搭建 | Deag Zohn Hag</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Deag Zohn Hag">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="Linux在虚拟机上环境的搭建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux环境搭建">
+<meta property="og:url" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Deag Zohn Hag">
+<meta property="og:description" content="Linux在虚拟机上环境的搭建">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8D%E7%A7%B0.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%99%BB%E5%85%A5.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/DHCP%E8%AE%BE%E7%BD%AE.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%B0%8F%E7%94%B5%E8%84%91.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%BE%93%E5%85%A5%E5%9C%B0%E5%9D%80.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%87%8D%E5%90%AF%E7%BD%91%E7%BB%9C.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C.png">
+<meta property="article:published_time" content="2020-07-17T06:47:53.000Z">
+<meta property="article:modified_time" content="2020-07-18T02:01:48.771Z">
 <meta property="article:author" content="Deag Zohn Hag">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8D%E7%A7%B0.png">
   
     <link rel="alternative" href="/atom.xml" title="Deag Zohn Hag" type="application/atom+xml">
   
@@ -130,295 +144,151 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Linux环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux环境搭建
+    </h1>
+  
+
+        
+        <a href="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2020-07-17T06:47:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux在虚拟机上环境的搭建</p>
+<a id="more"></a>
+
+<h2 id="安装虚拟机"><a href="#安装虚拟机" class="headerlink" title="安装虚拟机"></a>安装虚拟机</h2><p>下载虚拟机安装虚拟机<br>创建新的虚拟机<br>下一步<br>选择CentOS的ios文件<br>输入信息下一步<br><img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%90%8D%E7%A7%B0.png" alt="虚拟机名称"><br><img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86.png" alt="磁盘管理"><br>下一步<br>点击OK<br><img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E7%99%BB%E5%85%A5.png" alt="登入"><br>选择other<br>输入root<br>输入密码<br>点击close</p>
+<h2 id="网络设置"><a href="#网络设置" class="headerlink" title="网络设置"></a>网络设置</h2><p>点击编辑选择虚拟网络编辑器<br>点击更改设置<br>选择上面三个的最后一项点击DHCP设置与NAT设置<br><img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/DHCP%E8%AE%BE%E7%BD%AE.png" alt="DHCP设置"><br>选择虚拟机右上方这个图标<img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E5%B0%8F%E7%94%B5%E8%84%91.png" alt="小电脑"><br>右键选择Edit Connections…<br>点击System eth0 点击Edit<br>进入如下页面点击Add<br><img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C.png" alt="设置网络"><br>输入一个介于DHCP设置中起始地址与结束地址之间的地址、子网掩码、NAT设置中的网关IP<br>下面两行分别输入8.8.8.8和4.4.4.4<br><img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E8%BE%93%E5%85%A5%E5%9C%B0%E5%9D%80.png" alt="输入地址"><br>点击Apply<br>点击右键选择Open in Terminal<br>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network restart</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%87%8D%E5%90%AF%E7%BD%91%E7%BB%9C.png" alt="重启网络"><br>测试网络设置是否成功输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping baidu.com</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C.png" alt="测试网络"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/spark-shell%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2020-07-18T12:30:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/spark-shell%E6%93%8D%E4%BD%9C/">spark-shell操作</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/17/Linux%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/spark%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-07-18T12:14:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/07/17/SecureCRT%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SecureCRT安装配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/16/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C(Win10)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo博客的一些操作(Win10)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/spark%E5%AE%89%E8%A3%85/">spark安装</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/Scala%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-07-18T12:00:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/Scala%E5%AE%89%E8%A3%85/">Scala安装</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/maven%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-07-18T07:42:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/maven%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA/">maven项目创建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E8%AE%BE%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-07-18T07:17:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95%E8%AE%BE%E7%BD%AE/">中文输入法设置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/Eclipse%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-07-18T06:29:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/Eclipse%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">Eclipse安装配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/HDFS-Shell/" class="archive-article-date">
-  	<time datetime="2020-07-18T03:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/HDFS-Shell/">HDFS-Shell</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/hadoop%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-07-18T02:40:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/hadoop%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">hadoop安装配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/18/Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-07-18T01:48:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/18/Java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Java环境配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/17/notepad%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-07-17T15:03:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/17/notepad%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">notepad安装配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -442,8 +312,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
