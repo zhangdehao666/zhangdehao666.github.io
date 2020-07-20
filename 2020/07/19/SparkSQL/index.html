@@ -6,19 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Spark-wordcount | Deag Zohn Hag</title>
+  <title>SparkSQL | Deag Zohn Hag</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spark-Hadoop-wordcount">
+  <meta name="description" content="SparkSQL operation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spark-wordcount">
-<meta property="og:url" content="http://yoursite.com/2020/07/19/Spark-wordcount/index.html">
+<meta property="og:title" content="SparkSQL">
+<meta property="og:url" content="http://yoursite.com/2020/07/19/SparkSQL/index.html">
 <meta property="og:site_name" content="Deag Zohn Hag">
-<meta property="og:description" content="Spark-Hadoop-wordcount">
+<meta property="og:description" content="SparkSQL operation">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-19T04:39:37.000Z">
-<meta property="article:modified_time" content="2020-07-19T04:46:36.711Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/events1.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/users1.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/users2.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/train1.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/Indirectlyread.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/convertdataframe.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/Format.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/customschema.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/SparkSQL/supplement.PNG">
+<meta property="article:published_time" content="2020-07-19T07:13:34.000Z">
+<meta property="article:modified_time" content="2020-07-19T08:41:45.523Z">
 <meta property="article:author" content="Deag Zohn Hag">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/19/SparkSQL/events1.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Deag Zohn Hag" type="application/atom+xml">
   
@@ -134,36 +144,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spark-wordcount" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SparkSQL" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spark-wordcount
+      SparkSQL
     </h1>
   
 
         
-        <a href="/2020/07/19/Spark-wordcount/" class="archive-article-date">
-  	<time datetime="2020-07-19T04:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+        <a href="/2020/07/19/SparkSQL/" class="archive-article-date">
+  	<time datetime="2020-07-19T07:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Spark-Hadoop-wordcount</p>
+        <p>SparkSQL operation</p>
 <a id="more"></a>
 
-<h2 id="Create-test-file"><a href="#Create-test-file" class="headerlink" title="Create test file"></a>Create test file</h2><p><code>cd /home/data</code><br><code>touch test.txt</code><br><code>vim test.txt</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iphone   iphonex</span><br><span class="line">xiaomi   oppo   iphonex</span><br><span class="line">iphone   huawei</span><br></pre></td></tr></table></figure>
-
-<h2 id="Read-file"><a href="#Read-file" class="headerlink" title="Read file"></a>Read file</h2><p><code>val tfile=sc.textFile(&quot;file:/home/data/test.txt&quot;)</code></p>
-<h2 id="Split-file"><a href="#Split-file" class="headerlink" title="Split file"></a>Split file</h2><p><code>val stringRDD=tfile.flatMap(line=&gt;line.split(&quot;\t&quot;))</code></p>
-<h2 id="MR-calculation"><a href="#MR-calculation" class="headerlink" title="MR calculation"></a>MR calculation</h2><p><code>stringRDD.map(word=&gt;(word,1)).reduceByKey(_+_).foreach(println)</code><br>(xiaomi,1)<br>(iphone,2)<br>(oppo,1)<br>(iphonex,2)<br>(huawei,1)<br><code>wcRDD.saveAsTextFile(&quot;/home/data/output2&quot;)</code></p>
-<h2 id="result"><a href="#result" class="headerlink" title="result"></a>result</h2><p><code>bin/hdfs dfs -ls /home/data/output2</code><br><code>bin/hdfs dfs -cat /home/data/output2/part-00000</code><br>(xiaomi,1)<br>(iphone,2)<br>(oppo,1)<br>(iphonex,2)<br>(huawei,1)</p>
+<h2 id="Basic-operation"><a href="#Basic-operation" class="headerlink" title="Basic operation"></a>Basic operation</h2><h3 id="Read-csv"><a href="#Read-csv" class="headerlink" title="Read csv"></a>Read csv</h3><p><code>val df=spark.read.format(&quot;csv&quot;).option(&quot;header&quot;,&quot;true&quot;).option(&quot;delimiter&quot;,&quot;,&quot;).load(&quot;file:///home/data/events.csv&quot;)</code></p>
+<h3 id="Show"><a href="#Show" class="headerlink" title="Show"></a>Show</h3><p><code>df.printSchema</code></p>
+<h3 id="Create-temporary-table"><a href="#Create-temporary-table" class="headerlink" title="Create temporary table"></a>Create temporary table</h3><p><code>df.createOrReplaceTempView(&quot;events&quot;)</code></p>
+<h2 id="SparkSQL"><a href="#SparkSQL" class="headerlink" title="SparkSQL"></a>SparkSQL</h2><h3 id="SQL-command"><a href="#SQL-command" class="headerlink" title="SQL command"></a>SQL command</h3><p><code>spark.sql(&quot;select user_id,event_id,start_time from events limit 10&quot;).show</code><br><img src="/2020/07/19/SparkSQL/events1.PNG" alt="events1"></p>
+<h3 id="Intercept-new-table"><a href="#Intercept-new-table" class="headerlink" title="Intercept new table"></a>Intercept new table</h3><p><code>val userDF2=userDF.select(&quot;user_id&quot;,&quot;locale&quot;,&quot;birthyear&quot;,&quot;gender&quot;)</code><br><img src="/2020/07/19/SparkSQL/users1.PNG" alt="users1"></p>
+<h3 id="Show-table"><a href="#Show-table" class="headerlink" title="Show table"></a>Show table</h3><p>false-&gt;align left<br><code>userDF2.show(5,false)</code><br><img src="/2020/07/19/SparkSQL/users2.PNG" alt="users2"></p>
+<h3 id="Modify-header"><a href="#Modify-header" class="headerlink" title="Modify header"></a>Modify header</h3><p><code>import org.apache.spark.sql.functions._</code><br><code>import org.apache.spark.sql.functions.col</code><br><code>val data2=data1.select(col(&quot;_c0&quot;).as(&quot;interesed&quot;),col(&quot;_c1&quot;).as(&quot;user_id&quot;),col(&quot;_c2&quot;).as(&quot;event_id&quot;))</code><br><img src="/2020/07/19/SparkSQL/train1.PNG" alt="train1"></p>
+<h2 id="Indirectly-read"><a href="#Indirectly-read" class="headerlink" title="Indirectly read"></a>Indirectly read</h2><p><code>val wf=sc.textFile(&quot;file:///home/data/words&quot;).flatMap(line =&gt;line.split(&quot; &quot;).map(x =&gt;(x,1))).reduceByKey(_+_)</code><br><code>wf.foreach(println)</code><br><img src="/2020/07/19/SparkSQL/Indirectlyread.PNG" alt="Indirectlyread"></p>
+<h3 id="Convert-dataframe"><a href="#Convert-dataframe" class="headerlink" title="Convert dataframe"></a>Convert dataframe</h3><p><code>val wcDF=wf.toDF</code><br><img src="/2020/07/19/SparkSQL/convertdataframe.PNG" alt="convertdataframe"></p>
+<h3 id="Format"><a href="#Format" class="headerlink" title="Format"></a>Format</h3><p><code>val wc=wcDF.withColumnRenamed(&quot;_1&quot;,&quot;word&quot;).withColumnRenamed(&quot;_2&quot;,&quot;count&quot;)</code><br><img src="/2020/07/19/SparkSQL/Format.PNG" alt="Format"></p>
+<h2 id="Custom-schema"><a href="#Custom-schema" class="headerlink" title="Custom schema"></a>Custom schema</h2><h3 id="Import-type"><a href="#Import-type" class="headerlink" title="Import type"></a>Import type</h3><p><code>import org.apache.spark.sql.types._</code></p>
+<h3 id="Custom-schema-1"><a href="#Custom-schema-1" class="headerlink" title="Custom schema"></a>Custom schema</h3><p><code>val schema=StructType(Array(StructField(&quot;word&quot;,StringType,false),StructField(&quot;count&quot;,IntegerType,true)))</code></p>
+<h3 id="Import-row"><a href="#Import-row" class="headerlink" title="Import row"></a>Import row</h3><p><code>import org.apache.spark.sql.Row</code></p>
+<h3 id="Convert-RDD-to-SQLRDD"><a href="#Convert-RDD-to-SQLRDD" class="headerlink" title="Convert RDD to SQLRDD"></a>Convert RDD to SQLRDD</h3><p><code>val rdd=wf.map(x =&gt;Row(x._1,x._2))</code></p>
+<h3 id="Create-df"><a href="#Create-df" class="headerlink" title="Create df"></a>Create df</h3><p><code>val df2=spark.createDataFrame(rdd,schema)</code></p>
+<p><img src="/2020/07/19/SparkSQL/customschema.PNG" alt="customschema"></p>
+<h2 id="Supplement"><a href="#Supplement" class="headerlink" title="Supplement"></a>Supplement</h2><p><img src="/2020/07/19/SparkSQL/supplement.PNG" alt="supplement"></p>
 
       
 
@@ -222,7 +242,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/19/Spark-wordcount/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/19/SparkSQL/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -236,18 +256,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/19/SparkSQL/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/19/Recommendation-engine-algorithm/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SparkSQL
+          Recommendation-engine-algorithm
         
       </div>
     </a>
   
   
-    <a href="/2020/07/19/RDD-persistence/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">RDD-persistence</div>
+    <a href="/2020/07/19/Spark-wordcount/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spark-wordcount</div>
       <i class="icon-circle-right"></i>
     </a>
   

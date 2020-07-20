@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Spark-wordcount | Deag Zohn Hag</title>
+  <title>Recommendation-engine-algorithm | Deag Zohn Hag</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spark-Hadoop-wordcount">
+  <meta name="description" content="Recommendation engine algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spark-wordcount">
-<meta property="og:url" content="http://yoursite.com/2020/07/19/Spark-wordcount/index.html">
+<meta property="og:title" content="Recommendation-engine-algorithm">
+<meta property="og:url" content="http://yoursite.com/2020/07/19/Recommendation-engine-algorithm/index.html">
 <meta property="og:site_name" content="Deag Zohn Hag">
-<meta property="og:description" content="Spark-Hadoop-wordcount">
+<meta property="og:description" content="Recommendation engine algorithm">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-19T04:39:37.000Z">
-<meta property="article:modified_time" content="2020-07-19T04:46:36.711Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/19/Recommendation-engine-algorithm/Viewdata.PNG">
+<meta property="article:published_time" content="2020-07-19T09:54:53.000Z">
+<meta property="article:modified_time" content="2020-07-19T10:29:13.735Z">
 <meta property="article:author" content="Deag Zohn Hag">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/19/Recommendation-engine-algorithm/Viewdata.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Deag Zohn Hag" type="application/atom+xml">
   
@@ -134,36 +136,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spark-wordcount" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Recommendation-engine-algorithm" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spark-wordcount
+      Recommendation-engine-algorithm
     </h1>
   
 
         
-        <a href="/2020/07/19/Spark-wordcount/" class="archive-article-date">
-  	<time datetime="2020-07-19T04:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+        <a href="/2020/07/19/Recommendation-engine-algorithm/" class="archive-article-date">
+  	<time datetime="2020-07-19T09:54:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Spark-Hadoop-wordcount</p>
+        <p>Recommendation engine algorithm</p>
 <a id="more"></a>
 
-<h2 id="Create-test-file"><a href="#Create-test-file" class="headerlink" title="Create test file"></a>Create test file</h2><p><code>cd /home/data</code><br><code>touch test.txt</code><br><code>vim test.txt</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iphone   iphonex</span><br><span class="line">xiaomi   oppo   iphonex</span><br><span class="line">iphone   huawei</span><br></pre></td></tr></table></figure>
-
-<h2 id="Read-file"><a href="#Read-file" class="headerlink" title="Read file"></a>Read file</h2><p><code>val tfile=sc.textFile(&quot;file:/home/data/test.txt&quot;)</code></p>
-<h2 id="Split-file"><a href="#Split-file" class="headerlink" title="Split file"></a>Split file</h2><p><code>val stringRDD=tfile.flatMap(line=&gt;line.split(&quot;\t&quot;))</code></p>
-<h2 id="MR-calculation"><a href="#MR-calculation" class="headerlink" title="MR calculation"></a>MR calculation</h2><p><code>stringRDD.map(word=&gt;(word,1)).reduceByKey(_+_).foreach(println)</code><br>(xiaomi,1)<br>(iphone,2)<br>(oppo,1)<br>(iphonex,2)<br>(huawei,1)<br><code>wcRDD.saveAsTextFile(&quot;/home/data/output2&quot;)</code></p>
-<h2 id="result"><a href="#result" class="headerlink" title="result"></a>result</h2><p><code>bin/hdfs dfs -ls /home/data/output2</code><br><code>bin/hdfs dfs -cat /home/data/output2/part-00000</code><br>(xiaomi,1)<br>(iphone,2)<br>(oppo,1)<br>(iphonex,2)<br>(huawei,1)</p>
+<h2 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h2><h3 id="View-data"><a href="#View-data" class="headerlink" title="View data"></a>View data</h3><p><code>val rawUserData=sc.textFile(&quot;file:///home/data/u.data&quot;)</code><br><code>rawUserData.first</code><br><code>rawUserData.take(5).foreach(println)</code></p>
+<p><img src="/2020/07/19/Recommendation-engine-algorithm/Viewdata.PNG" alt="Viewdata"></p>
+<h3 id="Show-userid-information"><a href="#Show-userid-information" class="headerlink" title="Show userid information"></a>Show userid information</h3><p><code>rawUserData.map(_.split(&quot;\t&quot;)(0).toDouble).stats()</code></p>
+<h3 id="Show-itemid-information"><a href="#Show-itemid-information" class="headerlink" title="Show itemid information"></a>Show itemid information</h3><p><code>rawUserData.map(_.split(&quot;\t&quot;)(1).toDouble).stats()</code></p>
+<h3 id="Show-rating-information"><a href="#Show-rating-information" class="headerlink" title="Show rating information"></a>Show rating information</h3><p><code>rawUserData.map(_.split(&quot;\t&quot;)(2).toDouble).stats()</code></p>
+<h2 id="Operation"><a href="#Operation" class="headerlink" title="Operation"></a>Operation</h2><h3 id="Import-ALS"><a href="#Import-ALS" class="headerlink" title="Import ALS"></a>Import ALS</h3><p><code>import org.apache.spark.mllib.recommendation.ALS</code></p>
+<h3 id="Import-Rating"><a href="#Import-Rating" class="headerlink" title="Import Rating"></a>Import Rating</h3><p><code>import org.apache.spark.mllib.recommendation.Rating</code></p>
+<h3 id="Read-the-first-three"><a href="#Read-the-first-three" class="headerlink" title="Read the first three"></a>Read the first three</h3><p><code>val rawRatings=rawUserData.map(_.split(&quot;\t&quot;).take(3) )</code></p>
+<h3 id="Prepare-ALS"><a href="#Prepare-ALS" class="headerlink" title="Prepare ALS"></a>Prepare ALS</h3><p><code>val ratingsRDD=rawRatings.map{case Array(user,movie,rating)=&gt;Rating(user.toInt,movie.toInt,rating.toDouble)}</code></p>
+<h3 id="Train"><a href="#Train" class="headerlink" title="Train"></a>Train</h3><p><code>val model=ALS.train(ratingsRDD,10,10,0.01)</code></p>
 
       
 
@@ -222,7 +227,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/19/Spark-wordcount/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/19/Recommendation-engine-algorithm/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -236,18 +241,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/19/SparkSQL/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/20/Zeppelin-install/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SparkSQL
+          Zeppelin-install
         
       </div>
     </a>
   
   
-    <a href="/2020/07/19/RDD-persistence/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">RDD-persistence</div>
+    <a href="/2020/07/19/SparkSQL/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SparkSQL</div>
       <i class="icon-circle-right"></i>
     </a>
   

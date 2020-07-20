@@ -6,19 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Spark-wordcount | Deag Zohn Hag</title>
+  <title>Zeppelin-install | Deag Zohn Hag</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spark-Hadoop-wordcount">
+  <meta name="description" content="Zeppelin install and environment configuration">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spark-wordcount">
-<meta property="og:url" content="http://yoursite.com/2020/07/19/Spark-wordcount/index.html">
+<meta property="og:title" content="Zeppelin-install">
+<meta property="og:url" content="http://yoursite.com/2020/07/20/Zeppelin-install/index.html">
 <meta property="og:site_name" content="Deag Zohn Hag">
-<meta property="og:description" content="Spark-Hadoop-wordcount">
+<meta property="og:description" content="Zeppelin install and environment configuration">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-19T04:39:37.000Z">
-<meta property="article:modified_time" content="2020-07-19T04:46:36.711Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Zeppelin-install/Introduction.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Zeppelin-install/Path.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Zeppelin-install/log4j.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Zeppelin-install/JAVA_HOME.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Zeppelin-install/SPARK_HOME.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Zeppelin-install/Start-up.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Zeppelin-install/googlechrome.PNG">
+<meta property="article:published_time" content="2020-07-20T01:19:02.000Z">
+<meta property="article:modified_time" content="2020-07-20T02:17:51.547Z">
 <meta property="article:author" content="Deag Zohn Hag">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/20/Zeppelin-install/Introduction.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Deag Zohn Hag" type="application/atom+xml">
   
@@ -134,36 +142,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spark-wordcount" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Zeppelin-install" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spark-wordcount
+      Zeppelin-install
     </h1>
   
 
         
-        <a href="/2020/07/19/Spark-wordcount/" class="archive-article-date">
-  	<time datetime="2020-07-19T04:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+        <a href="/2020/07/20/Zeppelin-install/" class="archive-article-date">
+  	<time datetime="2020-07-20T01:19:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Spark-Hadoop-wordcount</p>
+        <p>Zeppelin install and environment configuration</p>
 <a id="more"></a>
 
-<h2 id="Create-test-file"><a href="#Create-test-file" class="headerlink" title="Create test file"></a>Create test file</h2><p><code>cd /home/data</code><br><code>touch test.txt</code><br><code>vim test.txt</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iphone   iphonex</span><br><span class="line">xiaomi   oppo   iphonex</span><br><span class="line">iphone   huawei</span><br></pre></td></tr></table></figure>
-
-<h2 id="Read-file"><a href="#Read-file" class="headerlink" title="Read file"></a>Read file</h2><p><code>val tfile=sc.textFile(&quot;file:/home/data/test.txt&quot;)</code></p>
-<h2 id="Split-file"><a href="#Split-file" class="headerlink" title="Split file"></a>Split file</h2><p><code>val stringRDD=tfile.flatMap(line=&gt;line.split(&quot;\t&quot;))</code></p>
-<h2 id="MR-calculation"><a href="#MR-calculation" class="headerlink" title="MR calculation"></a>MR calculation</h2><p><code>stringRDD.map(word=&gt;(word,1)).reduceByKey(_+_).foreach(println)</code><br>(xiaomi,1)<br>(iphone,2)<br>(oppo,1)<br>(iphonex,2)<br>(huawei,1)<br><code>wcRDD.saveAsTextFile(&quot;/home/data/output2&quot;)</code></p>
-<h2 id="result"><a href="#result" class="headerlink" title="result"></a>result</h2><p><code>bin/hdfs dfs -ls /home/data/output2</code><br><code>bin/hdfs dfs -cat /home/data/output2/part-00000</code><br>(xiaomi,1)<br>(iphone,2)<br>(oppo,1)<br>(iphonex,2)<br>(huawei,1)</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><img src="/2020/07/20/Zeppelin-install/Introduction.PNG" alt="Introduction"></p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p>upload file and upzip</p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>open file path<br><img src="/2020/07/20/Zeppelin-install/Path.PNG" alt="Path"><br>modify log4j.properties<br>WARN -&gt; INFO<br><img src="/2020/07/20/Zeppelin-install/log4j.PNG" alt="log4j"><br>modify zeppelin-env.sh </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME&#x3D;&#x2F;home&#x2F;softwares&#x2F;java8</span><br><span class="line">export ZEPPELIN_INTP_JAVA_OPTS&#x3D;&quot; -XX:PermSize&#x3D;512M  -XX:MaxPermSize&#x3D;1024M&quot;</span><br><span class="line">export SPARK_HOME&#x3D;&#x2F;home&#x2F;softwares&#x2F;spark-2.3.3-bin-hadoop2.7</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/20/Zeppelin-install/JAVA_HOME.PNG" alt="JAVA_HOME"><br><img src="/2020/07/20/Zeppelin-install/SPARK_HOME.PNG" alt="SPARK_HOME"></p>
+<h2 id="Start-up"><a href="#Start-up" class="headerlink" title="Start-up"></a>Start-up</h2><p>open spark-shell<br>open zeppelin path<br><code>bin/zeppelin-daemon.sh start</code><br><img src="/2020/07/20/Zeppelin-install/Start-up.PNG" alt="Start-up"><br>open google chrome<br><code>hadoop:8080</code><br><img src="/2020/07/20/Zeppelin-install/googlechrome.PNG" alt="googlechrome"></p>
 
       
 
@@ -222,7 +229,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/19/Spark-wordcount/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/20/Zeppelin-install/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -236,18 +243,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/19/SparkSQL/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/20/Data-visualization/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SparkSQL
+          Data-visualization
         
       </div>
     </a>
   
   
-    <a href="/2020/07/19/RDD-persistence/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">RDD-persistence</div>
+    <a href="/2020/07/19/Recommendation-engine-algorithm/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Recommendation-engine-algorithm</div>
       <i class="icon-circle-right"></i>
     </a>
   

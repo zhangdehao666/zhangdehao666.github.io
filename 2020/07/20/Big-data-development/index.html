@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Spark-wordcount | Deag Zohn Hag</title>
+  <title>Big-data-development | Deag Zohn Hag</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spark-Hadoop-wordcount">
+  <meta name="description" content="Big data development preparation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spark-wordcount">
-<meta property="og:url" content="http://yoursite.com/2020/07/19/Spark-wordcount/index.html">
+<meta property="og:title" content="Big-data-development">
+<meta property="og:url" content="http://yoursite.com/2020/07/20/Big-data-development/index.html">
 <meta property="og:site_name" content="Deag Zohn Hag">
-<meta property="og:description" content="Spark-Hadoop-wordcount">
+<meta property="og:description" content="Big data development preparation">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-19T04:39:37.000Z">
-<meta property="article:modified_time" content="2020-07-19T04:46:36.711Z">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Big-data-development/scalacompiler.PNG">
+<meta property="og:image" content="http://yoursite.com/2020/07/20/Big-data-development/libraries.PNG">
+<meta property="article:published_time" content="2020-07-20T02:16:09.000Z">
+<meta property="article:modified_time" content="2020-07-20T02:34:58.898Z">
 <meta property="article:author" content="Deag Zohn Hag">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/20/Big-data-development/scalacompiler.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Deag Zohn Hag" type="application/atom+xml">
   
@@ -134,36 +137,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Spark-wordcount" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Big-data-development" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spark-wordcount
+      Big-data-development
     </h1>
   
 
         
-        <a href="/2020/07/19/Spark-wordcount/" class="archive-article-date">
-  	<time datetime="2020-07-19T04:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-19</time>
+        <a href="/2020/07/20/Big-data-development/" class="archive-article-date">
+  	<time datetime="2020-07-20T02:16:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Spark-Hadoop-wordcount</p>
+        <p>Big data development preparation</p>
 <a id="more"></a>
 
-<h2 id="Create-test-file"><a href="#Create-test-file" class="headerlink" title="Create test file"></a>Create test file</h2><p><code>cd /home/data</code><br><code>touch test.txt</code><br><code>vim test.txt</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iphone   iphonex</span><br><span class="line">xiaomi   oppo   iphonex</span><br><span class="line">iphone   huawei</span><br></pre></td></tr></table></figure>
-
-<h2 id="Read-file"><a href="#Read-file" class="headerlink" title="Read file"></a>Read file</h2><p><code>val tfile=sc.textFile(&quot;file:/home/data/test.txt&quot;)</code></p>
-<h2 id="Split-file"><a href="#Split-file" class="headerlink" title="Split file"></a>Split file</h2><p><code>val stringRDD=tfile.flatMap(line=&gt;line.split(&quot;\t&quot;))</code></p>
-<h2 id="MR-calculation"><a href="#MR-calculation" class="headerlink" title="MR calculation"></a>MR calculation</h2><p><code>stringRDD.map(word=&gt;(word,1)).reduceByKey(_+_).foreach(println)</code><br>(xiaomi,1)<br>(iphone,2)<br>(oppo,1)<br>(iphonex,2)<br>(huawei,1)<br><code>wcRDD.saveAsTextFile(&quot;/home/data/output2&quot;)</code></p>
-<h2 id="result"><a href="#result" class="headerlink" title="result"></a>result</h2><p><code>bin/hdfs dfs -ls /home/data/output2</code><br><code>bin/hdfs dfs -cat /home/data/output2/part-00000</code><br>(xiaomi,1)<br>(iphone,2)<br>(oppo,1)<br>(iphonex,2)<br>(huawei,1)</p>
+<p>upzip scala-SDK and create launcer<br>create new scala project<br>right click project open properties<br>click Scala Compiler<br><img src="/2020/07/20/Big-data-development/scalacompiler.PNG" alt="scalacompiler"><br>right click project-&gt;Build Path-&gt;Configure Build Path<br><img src="/2020/07/20/Big-data-development/libraries.PNG" alt="libraries"><br>click Add External JARs<br>open home/softwares/spark-2.3.3-bin-hadoop2.7/jars<br>select all click OK</p>
 
       
 
@@ -222,7 +219,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/19/Spark-wordcount/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/20/Big-data-development/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -236,18 +233,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/19/SparkSQL/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SparkSQL
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/19/RDD-persistence/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">RDD-persistence</div>
+    <a href="/2020/07/20/Data-visualization/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Data-visualization</div>
       <i class="icon-circle-right"></i>
     </a>
   
